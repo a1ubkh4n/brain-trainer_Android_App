@@ -32,7 +32,7 @@
         android:background="#efde6a"
         android:padding="10dp"
         android:text="30s"
-        android:textSize="40sp" />
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/pointTextView"
@@ -46,7 +46,7 @@
         android:background="#a45ae4"
         android:padding="10dp"
         android:text="0/0"
-        android:textSize="40sp" />
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/sumTextView"
@@ -58,7 +58,7 @@
         android:padding="15dp"
         android:text="31 + 12"
         android:textColor="#080d08"
-        android:textSize="30sp"
+        android:textSize="45sp"
         android:textStyle="bold|italic" />
 
     <GridLayout
@@ -100,7 +100,7 @@
             android:layout_rowWeight="1"
             android:background="#b24a2a"
             android:onClick="chooseAnswer"
-            android:tag="0"
+            android:tag="1"
             android:text="3"
             android:textSize="70sp" />
 
@@ -117,7 +117,7 @@
             android:layout_rowWeight="1"
             android:background="#17ab19"
             android:onClick="chooseAnswer"
-            android:tag="0"
+            android:tag="2"
             android:text="3"
             android:textSize="70sp" />
 
@@ -134,7 +134,7 @@
             android:layout_rowWeight="1"
             android:background="#b21f92"
             android:onClick="chooseAnswer"
-            android:tag="0"
+            android:tag="3"
             android:text="3"
             android:textSize="70sp" />
 
@@ -148,9 +148,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="44dp"
         android:padding="10dp"
-        android:text="Correct!"
+        android:text=""
         android:textAllCaps="false"
-        android:textColor="#292525"
+        android:textColor="#494343"
         android:textSize="40sp"
         android:textStyle="bold" />
 </RelativeLayout>
