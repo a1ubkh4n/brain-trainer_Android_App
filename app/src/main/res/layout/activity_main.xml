@@ -146,11 +146,22 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="65dp"
         android:padding="10dp"
         android:text=""
         android:textAllCaps="false"
         android:textColor="#494343"
-        android:textSize="40sp"
+        android:textSize="30sp"
         android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/playAgainButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="21dp"
+        android:onClick="playAgain"
+        android:text="Play Again"
+        android:visibility="invisible" />
 </RelativeLayout>

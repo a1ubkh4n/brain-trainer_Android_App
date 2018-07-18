@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     Button button2;
     Button button3;
     Button button4;
+    Button playAgainButton;
     TextView sumTextView;
     TextView resultTextView;
     TextView pointsTextView;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     int locationOfCorrectAnswer;
     int score = 0;
     int numberOfQuestions = 0;
+
 
     public void generateQuestions() {
 
@@ -87,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         button2 = (Button) findViewById(R.id.button2);
         button3 = (Button) findViewById(R.id.button3);
         button4 = (Button) findViewById(R.id.button4);
+        playAgainButton = (Button) findViewById(R.id.playAgainButton);
 
         sumTextView = (TextView) findViewById(R.id.sumTextView);
         resultTextView = (TextView) findViewById(R.id.resultTextView);
@@ -95,20 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
         generateQuestions();
 
-        new CountDownTimer(3100, 1000) {
-            @Override
-            public void onTick(long l) {
-
-                timerTextView.setText(String.valueOf(l / 1000) + "s");
-            }
-
-            @Override
-            public void onFinish() {
-
-                resultTextView.setText("Done!");
-
-            }
-        }.start();
+       playAgain(findViewById(R.id.playAgainButton));
 
     }
 
@@ -138,5 +128,32 @@ public class MainActivity extends AppCompatActivity {
         pointsTextView.setText(Integer.toString(score) + "/" + Integer.toString(numberOfQuestions));
         generateQuestions();
 
+    }
+
+    public void playAgain(View view) {
+        score = 0;
+        numberOfQuestions = 0;
+
+        timerTextView.setText("30s");
+        pointsTextView.setText("0/0");
+        resultTextView.setText("");
+        playAgainButton.setVisibility(View.INVISIBLE);
+
+        new CountDownTimer(3100, 1000) {
+            @Override
+            public void onTick(long l) {
+
+                timerTextView.setText(String.valueOf(l / 1000) + "s");
+            }
+
+            @Override
+            public void onFinish() {
+
+                playAgainButton.setVisibility(View.VISIBLE);
+                timerTextView.setText("0s");
+                resultTextView.setText("Your score: " + Integer.toString(score) + "/" + Integer.toString(numberOfQuestions));
+
+            }
+        }.start();
     }
 }
