@@ -23,30 +23,34 @@
         android:id="@+id/timerTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="21dp"
+        android:background="#efde6a"
         android:padding="10dp"
-        android:text="timerTextView"
-        android:textSize="40sp"
-        tools:background="#efde6a"
-        tools:text="30s" />
+        android:text="30s"
+        android:textSize="40sp" />
 
     <TextView
         android:id="@+id/pointTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/timerTextView"
         android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#a45ae4"
         android:padding="10dp"
         android:text="0/0"
-        android:textSize="40sp"
-        tools:background="@android:color/holo_purple" />
+        android:textSize="40sp" />
 
     <TextView
         android:id="@+id/sumTextView"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/timerTextView"
@@ -54,7 +58,8 @@
         android:padding="15dp"
         android:text="31 + 12"
         android:textColor="#080d08"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:textStyle="bold|italic" />
 
     <GridLayout
         android:layout_width="match_parent"
@@ -75,18 +80,20 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_row="0"
+            android:padding="20dp"
             android:layout_rowWeight="1"
             android:background="#ff444eff"
             android:onClick="chooseAnswer"
             android:tag="0"
             android:text="3"
-            android:textSize="80sp" />
+            android:textSize="70sp" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="1"
+            android:padding="20dp"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_row="0"
@@ -95,7 +102,7 @@
             android:onClick="chooseAnswer"
             android:tag="0"
             android:text="3"
-            android:textSize="80sp" />
+            android:textSize="70sp" />
 
 
         <Button
@@ -106,12 +113,13 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_row="1"
+            android:padding="20dp"
             android:layout_rowWeight="1"
             android:background="#17ab19"
             android:onClick="chooseAnswer"
             android:tag="0"
             android:text="3"
-            android:textSize="80sp" />
+            android:textSize="70sp" />
 
 
         <Button
@@ -122,12 +130,13 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_row="1"
+            android:padding="20dp"
             android:layout_rowWeight="1"
             android:background="#b21f92"
             android:onClick="chooseAnswer"
             android:tag="0"
             android:text="3"
-            android:textSize="80sp" />
+            android:textSize="70sp" />
 
     </GridLayout>
 
@@ -137,7 +146,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="91dp"
+        android:layout_marginBottom="44dp"
         android:padding="10dp"
         android:text="Correct!"
         android:textAllCaps="false"
