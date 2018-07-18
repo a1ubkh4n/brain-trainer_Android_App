@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     TextView resultTextView;
     TextView pointsTextView;
     TextView timerTextView;
+
+    RelativeLayout gameRelativeLayout;
 
 
     ArrayList<Integer> answers = new ArrayList<Integer>();
@@ -96,15 +99,18 @@ public class MainActivity extends AppCompatActivity {
         pointsTextView = (TextView) findViewById(R.id.pointTextView);
         timerTextView = (TextView) findViewById(R.id.timerTextView);
 
-        generateQuestions();
+        gameRelativeLayout = (RelativeLayout) findViewById(R.id.gameRelativeLayout);
 
-       playAgain(findViewById(R.id.playAgainButton));
+        playAgain(findViewById(R.id.playAgainButton));
 
     }
 
     public void start(View view) {
 
         startButton.setVisibility(View.INVISIBLE);
+        gameRelativeLayout.setVisibility(View.VISIBLE);
+
+        playAgain(findViewById(R.id.playAgainButton));
 
     }
 
@@ -139,11 +145,17 @@ public class MainActivity extends AppCompatActivity {
         resultTextView.setText("");
         playAgainButton.setVisibility(View.INVISIBLE);
 
-        new CountDownTimer(3100, 1000) {
+        generateQuestions();
+
+
+
+        new CountDownTimer(30100, 1000) {
             @Override
             public void onTick(long l) {
 
-                timerTextView.setText(String.valueOf(l / 1000) + "s");
+                timerTextView.setText(String.valueOf(l/1000) + "s");
+
+                Log.i("Timer:", String.valueOf(l/1000)+"s");
             }
 
             @Override
